@@ -4,7 +4,7 @@ exports.handler = async function(event, context) {
   const datetimestring = datetime.toUTCString();
 return {
       statusCode: 200,
-      body: datetimestring,
+      body: JSON.stringify({ server_time: datetimestring }),
       headers: {
         "Access-Control-Allow-Origin": "*",        
         "Access-Control-Allow-Headers": "Content-Type",
