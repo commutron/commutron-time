@@ -1,12 +1,14 @@
 # barnacle
 
-An alarm clock utility. Syncs time to http://worldclockapi.com/ and shows notifications on a recurring schedule of times.
+An alarm clock utility. Syncs time the host server and shows notifications on a recurring schedule of times.
 
-The time displayed may be up to a second off technically accurate. 
-But technically accurate is not the goal.
 The goal is to get every client to share the same time even if the desktop time is inccorrect.
 
-If the worldclock API is unavailable everything else will work off of the local computer time.
+The time is not accurate to the millisecond as it is not compensating for the API call delay.
+Even on a poor connection the round trip is negligible so more accuracy is not deemed worth while at this time.
+
+If the server API is unavailable, it will continue to work but off of the local computer time.
+
 
 config.json
 
