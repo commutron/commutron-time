@@ -1,8 +1,10 @@
 
 exports.handler = async function(event, context) {
-  return {
+  const datetime = new Date();
+  const datetimestring = datetime.toUTCString();
+return {
       statusCode: 200,
-      body: new Date.toISOString(),
+      body: datetimestring,
       headers: {
         "Access-Control-Allow-Origin": "*",        
         "Access-Control-Allow-Headers": "Content-Type",
