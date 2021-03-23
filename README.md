@@ -15,10 +15,7 @@ config.json
 ````
   // Display 24 hour time
   "twentyfour" : false,
-
-  // Display seconds
-  "seconds" : false,
-
+  
   // Default state of volume toggle
   "noise" : false,
 
