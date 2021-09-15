@@ -1,4 +1,4 @@
-# barnacle
+# Commutron Time (project barnacle)
 
 An alarm clock utility. Syncs time the host server and shows notifications on a recurring schedule of times.
 
@@ -42,3 +42,17 @@ config.json
 }
 
 ````
+
+## Technical
+
+Commutron Time is constituted of two parts. A webpage built with react-static and a Netlify "serverless" Lambda function. Its requirements are well below the current limits of the free tier. If 30 computers run Commutron Time 24/7 for 31 days they would make 22,000 lambda requests, the current monthly free tier limit is 125,000. If free-tier limits are reached then the services will stop. No charges will be incurred if no payment method is attached to the Netlify account. 
+
+The website is public but the Lambda function is private and can not be accessed by any other source. If it was moved to a new host, a new Lambda provider would be required for the server time sync component to function. Without a functioning Lambda function the rest of the clock will work correctly but it will use the local computers time.
+
+This GitHub repository commutron/commutron-time at https://github.com/commutron/commutron-time is configured with Netlify continuous integration (aka CI). This means that changes to this repository will automatically trigger an update on Netlify.
+This allows for changing the configuration without having to rebuild the site. Changing config.json can set the weekly alert schedule as well as other view options. The config.json can be edited directly in GitHub but it must be valid JSON. If you are unfamiliar with this, verify your changes with an online checker like JSON Lint (https://jsonlint.com/) before saving. The alert noises can be changed if the WAV file is replaced with another WAV file of the exact same name.
+
+The two bell noises are free and royalty-free files from Joseph Sardin at https://bigsoundbank.com/.
+The sound is set to OFF by default because of a bad actor browser mitigation. At this time, before the browser is allowed to play audio there must be a first user interaction after page load. A click of the icon satisfies this requirement.
+
+The source project repository is commutron/barnacle at https://github.com/commutron/barnacle. Initially built with react-static release 7.5.0.
