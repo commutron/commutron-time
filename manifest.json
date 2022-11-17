@@ -12,6 +12,12 @@
   "theme_color": "#2f2f2f",
   "icons": [
     {
+      "src": "/timer-circle-144.png",
+      "type": "image/png",
+      "sizes": "144x144",
+      "purpose": "maskable"
+    },
+    {
       "src": "/timer-circle-192.png",
       "type": "image/png",
       "sizes": "192x192",
